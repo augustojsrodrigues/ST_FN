@@ -41,15 +41,15 @@ html, body, [class*="css"] {
 
 .stApp {
     background:
-        radial-gradient(circle at 12% 8%, rgba(224, 242, 254, 0.95), transparent 30%),
-        radial-gradient(circle at 88% 10%, rgba(204, 251, 241, 0.75), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #ffffff 100%);
+        radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.08), transparent 26%),
+        radial-gradient(circle at 85% 0%, rgba(14, 165, 233, 0.08), transparent 24%),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 42%, #f8fafc 100%);
 }
 
 .block-container {
-    padding-top: 1.2rem;
-    padding-bottom: 2.5rem;
-    max-width: 1280px;
+    padding-top: 1.0rem;
+    padding-bottom: 2.2rem;
+    max-width: 1220px;
 }
 
 [data-testid="stSidebar"] {
@@ -57,101 +57,142 @@ html, body, [class*="css"] {
 }
 
 .hero {
-    position: relative;
-    padding: 0.95rem 1.15rem;
-    border-radius: 20px;
+    padding: 1.05rem 1.25rem;
+    border-radius: 22px;
     background:
-        radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 36%),
-        radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.14), transparent 34%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.92) 100%);
-    color: #0f172a;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 14px 38px rgba(15, 23, 42, 0.10);
-    margin-bottom: 0.65rem;
-    overflow: hidden;
+        linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #075985 100%);
+    color: white;
+    border: 1px solid rgba(226, 232, 240, 0.12);
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+    margin-bottom: 0.75rem;
 }
 
 .hero h1 {
-    font-size: clamp(1.05rem, 1.85vw, 1.55rem);
+    font-size: clamp(1.15rem, 1.7vw, 1.65rem);
     line-height: 1.16;
-    margin-bottom: 0.28rem;
+    margin-bottom: 0.30rem;
     font-weight: 800;
     letter-spacing: -0.025em;
-    max-width: 760px;
+    max-width: 850px;
 }
 
 .hero p {
-    font-size: 0.84rem;
-    color: #475569;
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.86);
     margin-bottom: 0;
-    max-width: 780px;
+    max-width: 850px;
 }
 
 .badge {
     display: inline-block;
-    padding: 0.18rem 0.46rem;
+    padding: 0.18rem 0.48rem;
     border-radius: 999px;
-    background: rgba(14, 165, 233, 0.10);
-    color: #075985;
-    border: 1px solid rgba(14, 165, 233, 0.18);
+    background: rgba(14, 165, 233, 0.16);
+    color: #e0f2fe;
+    border: 1px solid rgba(125, 211, 252, 0.22);
     font-size: 0.67rem;
     font-weight: 800;
     margin-right: 0.22rem;
-    margin-bottom: 0.30rem;
+    margin-bottom: 0.34rem;
 }
 
-.panel {
-    border-radius: 20px;
-    padding: 0.95rem 1rem;
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
-    margin-bottom: 1rem;
-}
-
-.panel h3 {
-    font-size: 1.12rem;
-    font-weight: 800;
-    margin-top: 0;
-    margin-bottom: 0.2rem;
-    color: #0f172a;
-}
-
-.panel p {
-    color: #475569;
+.motion-box {
+    height: 74px;
+    border-radius: 22px;
+    background:
+        linear-gradient(135deg, #111827 0%, #0f172a 48%, #1e40af 100%);
+    border: 1px solid rgba(226, 232, 240, 0.12);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
     margin-bottom: 0.75rem;
 }
 
-.metric-panel {
-    border-radius: 22px;
-    padding: 1.2rem;
-    background:
-        radial-gradient(circle at top right, rgba(45, 212, 191, 0.18), transparent 35%),
-        linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+.motion-line {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 38px;
+    height: 3px;
+    background: rgba(226, 232, 240, 0.62);
+    border-radius: 999px;
 }
 
-.dark-card {
-    border-radius: 22px;
+.motion-dot {
+    position: absolute;
+    top: 26px;
+    left: 12%;
+    width: 24px;
+    height: 24px;
+    background: #22d3ee;
+    border: 3px solid white;
+    border-radius: 50%;
+    animation: moveDot 3.0s linear infinite;
+}
+
+.motion-marker-s {
+    position: absolute;
+    top: 20px;
+    left: 34%;
+    width: 4px;
+    height: 38px;
+    background: #38bdf8;
+    border-radius: 999px;
+}
+
+.motion-marker-t {
+    position: absolute;
+    top: 20px;
+    left: 78%;
+    width: 4px;
+    height: 38px;
+    background: #34d399;
+    border-radius: 999px;
+}
+
+.motion-label-s {
+    position: absolute;
+    top: 53px;
+    left: 33%;
+    color: #e0f2fe;
+    font-weight: 800;
+}
+
+.motion-label-t {
+    position: absolute;
+    top: 53px;
+    left: 77%;
+    color: #dcfce7;
+    font-weight: 800;
+}
+
+@keyframes moveDot {
+    0% { left: 12%; }
+    100% { left: 86%; }
+}
+
+.section-title {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.06rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.help-text {
+    margin-top: -0.25rem;
+    margin-bottom: 0.7rem;
+    color: #64748b;
+    font-size: 0.88rem;
+}
+
+.info-box {
+    border-left: 5px solid #0284c7;
+    background: #eff6ff;
+    color: #0c4a6e;
     padding: 0.95rem 1rem;
-    background:
-        radial-gradient(circle at top right, rgba(45, 212, 191, 0.18), transparent 42%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: white;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
-    margin-bottom: 1rem;
-    min-height: 150px;
-}
-
-.dark-card h3 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 0.15rem;
-}
-
-.dark-card p {
-    color: rgba(255, 255, 255, 0.86);
+    border-radius: 14px;
+    margin: 0.75rem 0;
 }
 
 .warning-box {
@@ -172,15 +213,6 @@ html, body, [class*="css"] {
     margin: 0.75rem 0;
 }
 
-.info-box {
-    border-left: 5px solid #0284c7;
-    background: #eff6ff;
-    color: #0c4a6e;
-    padding: 0.95rem 1rem;
-    border-radius: 14px;
-    margin: 0.75rem 0;
-}
-
 .error-soft {
     border-left: 5px solid #ef4444;
     background: #fef2f2;
@@ -190,96 +222,56 @@ html, body, [class*="css"] {
     margin: 0.75rem 0;
 }
 
-.motion-box {
-    height: 72px;
+.dark-card {
     border-radius: 20px;
+    padding: 1.05rem 1.1rem;
     background:
-        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.22), transparent 32%),
-        radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.18), transparent 34%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 245, 249, 0.94));
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
-    margin-bottom: 0.65rem;
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.18), transparent 38%),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+    margin-bottom: 1rem;
+    min-height: 140px;
 }
 
-.motion-line {
-    position: absolute;
-    left: 9%;
-    right: 9%;
-    top: 36px;
-    height: 4px;
-    background: rgba(100, 116, 139, 0.45);
-    border-radius: 999px;
+.dark-card h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0.10rem;
 }
 
-.motion-dot {
-    position: absolute;
-    top: 23px;
-    left: 9%;
-    width: 28px;
-    height: 28px;
-    background: #fbbf24;
-    border: 3px solid white;
-    border-radius: 50%;
-    animation: moveDot 3.2s linear infinite;
+.dark-card p {
+    color: rgba(255, 255, 255, 0.86);
 }
 
-.motion-marker-s {
-    position: absolute;
-    top: 17px;
-    left: 34%;
-    width: 4px;
-    height: 38px;
-    background: #38bdf8;
-    border-radius: 999px;
-}
-
-.motion-marker-t {
-    position: absolute;
-    top: 17px;
-    left: 78%;
-    width: 4px;
-    height: 38px;
-    background: #22c55e;
-    border-radius: 999px;
-}
-
-.motion-label-s {
-    position: absolute;
-    top: 53px;
-    left: 33%;
-    color: #0284c7;
-    font-weight: 800;
-}
-
-.motion-label-t {
-    position: absolute;
-    top: 53px;
-    left: 77%;
-    color: #059669;
-    font-weight: 800;
-}
-
-@keyframes moveDot {
-    0% { left: 9%; }
-    100% { left: 86%; }
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    border-radius: 20px !important;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .stButton > button {
-    border-radius: 16px !important;
-    height: 3.1rem;
+    border-radius: 14px !important;
+    height: 3rem;
     font-weight: 800 !important;
-    font-size: 1.02rem !important;
+    font-size: 1.0rem !important;
+    background: #1d4ed8 !important;
+    border: 1px solid #1d4ed8 !important;
+    color: white !important;
+}
+
+.stButton > button:hover {
+    background: #1e40af !important;
+    border: 1px solid #1e40af !important;
+    color: white !important;
 }
 
 div[data-testid="stMetric"] {
     background: white;
     border: 1px solid rgba(15, 23, 42, 0.08);
     padding: 1rem;
-    border-radius: 20px;
-    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
 }
 
 hr {
@@ -315,15 +307,6 @@ class PolicyInputs:
 # Simulation model
 # ---------------------------------------------------------------------
 def run_policy_simulation(inputs: PolicyInputs) -> Dict[str, float]:
-    """
-    Evaluate the modified-opportunistic inspection policy for fixed S and T.
-
-    Outputs:
-    - Cost rate;
-    - MTBOF;
-    - PFRBO;
-    - LOM.
-    """
     rng = np.random.default_rng(inputs.seed)
 
     S = inputs.S
@@ -514,7 +497,7 @@ def run_policy_simulation(inputs: PolicyInputs) -> Dict[str, float]:
 # ---------------------------------------------------------------------
 # Header
 # ---------------------------------------------------------------------
-top_left, top_right = st.columns([0.70, 0.30], vertical_alignment="center")
+top_left, top_right = st.columns([0.72, 0.28], vertical_alignment="center")
 
 with top_left:
     st.markdown(
@@ -557,19 +540,18 @@ tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
 with tab_run:
     st.markdown(
         """
-        <div class="panel">
-        <h3>Policy inputs</h3>
-        <p>Insert the values of the decision variables and model parameters. This public version evaluates the selected policy only. It does not optimize S and T.</p>
+        <div class="info-box">
+        Insert the policy values and model parameters below. This public version evaluates the selected policy only and does not optimize <b>S</b> and <b>T</b>.
         </div>
         """,
         unsafe_allow_html=True,
     )
 
     with st.form("policy_form"):
-        col_decision, col_reliability, col_cost, col_quality = st.columns([1.05, 1.20, 1.20, 1.10])
-
-        with col_decision:
-            st.markdown("### Decision variables")
+        st.markdown('<div class="section-title">Decision variables</div>', unsafe_allow_html=True)
+        st.markdown('<div class="help-text">These two parameters define the policy evaluated by the simulation.</div>', unsafe_allow_html=True)
+        d1, d2 = st.columns(2)
+        with d1:
             S = st.number_input(
                 "S  Opportunity acceptance threshold",
                 min_value=0.0,
@@ -578,6 +560,7 @@ with tab_run:
                 format="%.4f",
                 help="Opportunities before S are ignored. Opportunities after S may be used for inspection.",
             )
+        with d2:
             T = st.number_input(
                 "T  Scheduled inspection interval",
                 min_value=0.0001,
@@ -587,8 +570,12 @@ with tab_run:
                 help="Scheduled inspection is performed at T if no renewal occurs before that time.",
             )
 
-        with col_reliability:
-            st.markdown("### Reliability parameters")
+        st.divider()
+
+        st.markdown('<div class="section-title">System behavior</div>', unsafe_allow_html=True)
+        st.markdown('<div class="help-text">These parameters describe degradation and the occurrence of inspection opportunities.</div>', unsafe_allow_html=True)
+        r1, r2, r3 = st.columns(3)
+        with r1:
             mu_x = st.number_input(
                 "μX  Mean time to defect arrival",
                 min_value=0.0001,
@@ -596,6 +583,7 @@ with tab_run:
                 step=0.10,
                 format="%.4f",
             )
+        with r2:
             mu_h = st.number_input(
                 "μH  Mean delay time from defect to failure",
                 min_value=0.0001,
@@ -603,6 +591,7 @@ with tab_run:
                 step=0.10,
                 format="%.4f",
             )
+        with r3:
             mu_z = st.number_input(
                 "μZ  Mean time between opportunities",
                 min_value=0.000001,
@@ -611,8 +600,12 @@ with tab_run:
                 format="%.6f",
             )
 
-        with col_cost:
-            st.markdown("### Cost parameters")
+        st.divider()
+
+        st.markdown('<div class="section-title">Economic parameters</div>', unsafe_allow_html=True)
+        st.markdown('<div class="help-text">These costs define the economic consequences of inspection, prevention, and failure.</div>', unsafe_allow_html=True)
+        c1, c2, c3, c4 = st.columns(4)
+        with c1:
             c_f = st.number_input(
                 "CF  Corrective replacement cost",
                 min_value=0.0,
@@ -620,6 +613,7 @@ with tab_run:
                 step=0.50,
                 format="%.4f",
             )
+        with c2:
             c_p = st.number_input(
                 "CP  Preventive replacement cost",
                 min_value=0.0,
@@ -627,6 +621,7 @@ with tab_run:
                 step=0.10,
                 format="%.4f",
             )
+        with c3:
             c_i = st.number_input(
                 "CI  Scheduled inspection cost",
                 min_value=0.0,
@@ -634,6 +629,7 @@ with tab_run:
                 step=0.10,
                 format="%.4f",
             )
+        with c4:
             c_o = st.number_input(
                 "CO  Opportunistic inspection cost",
                 min_value=0.0,
@@ -642,8 +638,12 @@ with tab_run:
                 format="%.4f",
             )
 
-        with col_quality:
-            st.markdown("### Inspection quality")
+        st.divider()
+
+        st.markdown('<div class="section-title">Inspection quality and simulation</div>', unsafe_allow_html=True)
+        st.markdown('<div class="help-text">False negative probabilities represent missed detections. Simulation settings control the Monte Carlo run.</div>', unsafe_allow_html=True)
+        q1, q2, q3, q4 = st.columns([1.25, 1.25, 1.0, 0.8])
+        with q1:
             beta_s = st.slider(
                 "βs  False negative probability in scheduled inspections",
                 min_value=0.0,
@@ -651,6 +651,7 @@ with tab_run:
                 value=0.0,
                 step=0.01,
             )
+        with q2:
             beta_o = st.slider(
                 "βo  False negative probability in opportunistic inspections",
                 min_value=0.0,
@@ -658,7 +659,7 @@ with tab_run:
                 value=0.0,
                 step=0.01,
             )
-            st.markdown("### Simulation")
+        with q3:
             n_cycles = st.number_input(
                 "Number of simulated decision steps",
                 min_value=1_000,
@@ -666,6 +667,7 @@ with tab_run:
                 value=100_000,
                 step=10_000,
             )
+        with q4:
             seed = st.number_input(
                 "Random seed",
                 min_value=0,
@@ -725,7 +727,7 @@ with tab_run:
         st.markdown(
             """
             <div class="info-box">
-            Adjust the inputs above and click <b>Run policy evaluation</b>. The app will show only the four main outputs used in the paper.
+            After inserting the parameters, click <b>Run policy evaluation</b>. The app will show only the four main outputs used in the paper.
             </div>
             """,
             unsafe_allow_html=True,
@@ -740,7 +742,7 @@ with tab_policy:
 
     st.markdown(
         """
-        <div class="panel">
+        <div class="info-box">
         The policy combines two inspection modes for a critical system. The first mode is an opportunistic inspection, which may be performed when an external operational event creates a favorable inspection moment. The second mode is a scheduled inspection, which occurs at a planned time limit.
         </div>
         """,
@@ -804,46 +806,22 @@ with tab_metrics:
     col_1, col_2 = st.columns(2)
 
     with col_1:
-        st.markdown(
-            """
-            <div class="panel">
-            <h3>Cost rate</h3>
-            Long-run cost per unit of simulated operating time. Lower values indicate a cheaper policy for the selected parameters.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        with st.container(border=True):
+            st.markdown("### Cost rate")
+            st.write("Long-run cost per unit of simulated operating time. Lower values indicate a cheaper policy for the selected parameters.")
 
-        st.markdown(
-            """
-            <div class="panel">
-            <h3>MTBOF</h3>
-            Mean time between operational failures. Higher values indicate longer expected operation between failures.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        with st.container(border=True):
+            st.markdown("### MTBOF")
+            st.write("Mean time between operational failures. Higher values indicate longer expected operation between failures.")
 
     with col_2:
-        st.markdown(
-            """
-            <div class="panel">
-            <h3>PFRBO</h3>
-            Potential Failure Reduction by Opportunities. It measures the proportion of simulated cycles in which an opportunity successfully detects a defect and prevents a potential failure.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        with st.container(border=True):
+            st.markdown("### PFRBO")
+            st.write("Potential Failure Reduction by Opportunities. It measures the proportion of simulated cycles in which an opportunity successfully detects a defect and prevents a potential failure.")
 
-        st.markdown(
-            """
-            <div class="panel">
-            <h3>LOM</h3>
-            Lost Opportunity by Misclassification. It measures the proportion of simulated cycles in which an opportunity is present, but its value is lost due to false negative effects.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        with st.container(border=True):
+            st.markdown("### LOM")
+            st.write("Lost Opportunity by Misclassification. It measures the proportion of simulated cycles in which an opportunity is present, but its value is lost due to false negative effects.")
 
     st.info("A good policy is not defined by one metric alone. The decision maker should compare cost rate, MTBOF, PFRBO, and LOM together.")
 
