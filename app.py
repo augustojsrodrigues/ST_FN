@@ -47,7 +47,7 @@ html, body, [class*="css"] {
 }
 
 .block-container {
-    padding-top: 0.9rem;
+    padding-top: 1.4rem;
     padding-bottom: 2.1rem;
     max-width: 1220px;
 }
@@ -57,7 +57,7 @@ html, body, [class*="css"] {
 }
 
 .hero {
-    padding: 1.0rem 1.2rem;
+    padding: 1.25rem 1.25rem 1.0rem 1.25rem;
     border-radius: 22px;
     background:
         radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.28), transparent 32%),
@@ -65,7 +65,7 @@ html, body, [class*="css"] {
     color: white;
     border: 1px solid rgba(226, 232, 240, 0.12);
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.20);
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.70rem;
 }
 
 .hero h1 {
@@ -94,11 +94,11 @@ html, body, [class*="css"] {
     font-size: 0.65rem;
     font-weight: 800;
     margin-right: 0.22rem;
-    margin-bottom: 0.32rem;
+    margin-bottom: 0.42rem;
 }
 
 .motion-box {
-    height: 70px;
+    height: 66px;
     border-radius: 22px;
     background:
         radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.25), transparent 32%),
@@ -114,7 +114,7 @@ html, body, [class*="css"] {
     position: absolute;
     left: 12%;
     right: 12%;
-    top: 36px;
+    top: 34px;
     height: 3px;
     background: rgba(226, 232, 240, 0.62);
     border-radius: 999px;
@@ -122,7 +122,7 @@ html, body, [class*="css"] {
 
 .motion-dot {
     position: absolute;
-    top: 24px;
+    top: 22px;
     left: 12%;
     width: 24px;
     height: 24px;
@@ -134,7 +134,7 @@ html, body, [class*="css"] {
 
 .motion-marker-s {
     position: absolute;
-    top: 18px;
+    top: 16px;
     left: 34%;
     width: 4px;
     height: 38px;
@@ -144,7 +144,7 @@ html, body, [class*="css"] {
 
 .motion-marker-t {
     position: absolute;
-    top: 18px;
+    top: 16px;
     left: 78%;
     width: 4px;
     height: 38px;
@@ -154,7 +154,7 @@ html, body, [class*="css"] {
 
 .motion-label-s {
     position: absolute;
-    top: 51px;
+    top: 49px;
     left: 33%;
     color: #e0f2fe;
     font-weight: 800;
@@ -162,7 +162,7 @@ html, body, [class*="css"] {
 
 .motion-label-t {
     position: absolute;
-    top: 51px;
+    top: 49px;
     left: 77%;
     color: #dcfce7;
     font-weight: 800;
@@ -264,6 +264,77 @@ html, body, [class*="css"] {
     border-radius: 50%;
     top: 46px;
     right: 44px;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+    animation: pulseNode 1.7s infinite;
+}
+
+.mini-maintenance-gif {
+    height: 76px;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 20% 35%, rgba(34, 211, 238, 0.22), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e3a8a 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+    margin: 0.2rem 0 0.8rem 0;
+}
+
+.mini-gear-a, .mini-gear-b {
+    position: absolute;
+    border-radius: 50%;
+    border: 6px solid #67e8f9;
+    animation: spinGear 4s linear infinite;
+}
+
+.mini-gear-a {
+    width: 44px;
+    height: 44px;
+    top: 16px;
+    left: 34px;
+}
+
+.mini-gear-b {
+    width: 30px;
+    height: 30px;
+    top: 32px;
+    left: 80px;
+    border-color: #34d399;
+    animation-direction: reverse;
+    animation-duration: 3s;
+}
+
+.mini-gear-a::before, .mini-gear-b::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 3px solid #e0f2fe;
+}
+
+.mini-gear-a::before {
+    width: 14px;
+    height: 14px;
+    top: 9px;
+    left: 9px;
+}
+
+.mini-gear-b::before {
+    width: 8px;
+    height: 8px;
+    top: 5px;
+    left: 5px;
+}
+
+.mini-pulse {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #22c55e;
+    border: 3px solid white;
+    border-radius: 50%;
+    top: 29px;
+    right: 48px;
     box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
     animation: pulseNode 1.7s infinite;
 }
@@ -650,19 +721,6 @@ tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
 with tab_run:
     st.markdown(
         """
-        <div class="maintenance-gif">
-            <div class="gear-a"></div>
-            <div class="gear-b"></div>
-            <div class="signal-line"></div>
-            <div class="signal-dot"></div>
-            <div class="node"></div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(
-        """
         <div class="info-box">
         Insert the policy values and model parameters below. This public version evaluates the selected policy only and does not optimize <b>S</b> and <b>T</b>.
         </div>
@@ -856,12 +914,10 @@ with tab_policy:
 
     st.markdown(
         """
-        <div class="maintenance-gif">
-            <div class="gear-a"></div>
-            <div class="gear-b"></div>
-            <div class="signal-line"></div>
-            <div class="signal-dot"></div>
-            <div class="node"></div>
+        <div class="mini-maintenance-gif">
+            <div class="mini-gear-a"></div>
+            <div class="mini-gear-b"></div>
+            <div class="mini-pulse"></div>
         </div>
         """,
         unsafe_allow_html=True,
