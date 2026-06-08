@@ -710,19 +710,93 @@ with top_right:
     )
 
 
-tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
-    ["Run model", "Policy description", "Metrics and interpretation", "Authors and optimizer"]
+tab_home, tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
+    ["Presentation", "Run model", "Policy description", "Metrics and interpretation", "Authors and optimizer"]
 )
 
 
 # ---------------------------------------------------------------------
-# Tab 1: Run model
+# Tab 1: Presentation
+# ---------------------------------------------------------------------
+with tab_home:
+    st.markdown(
+        """
+        <div class="info-box">
+        <b>Welcome.</b> This application evaluates a modified-opportunistic inspection policy under false negative errors. It is designed as an analytical interface associated with the paper <b>Monte Carlo simulation for opportunistic inspection planning under misclassification errors</b>.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    c1, c2, c3 = st.columns(3)
+
+    with c1:
+        with st.container(border=True):
+            st.markdown("### What the app does")
+            st.write(
+                "The app evaluates a user-defined pair of decision variables, S and T, using Monte Carlo simulation. It returns the main performance measures of the selected policy."
+            )
+
+    with c2:
+        with st.container(border=True):
+            st.markdown("### What the app does not do")
+            st.write(
+                "This public version does not optimize S and T. It does not run differential evolution and it does not provide the optimal inspection policy."
+            )
+
+    with c3:
+        with st.container(border=True):
+            st.markdown("### How to use")
+            st.write(
+                "Open the Run model tab, insert the policy and system parameters, and click Run policy evaluation to obtain the results."
+            )
+
+    st.markdown("### Policy idea")
+
+    col_s, col_t = st.columns(2)
+
+    with col_s:
+        st.markdown(
+            """
+            <div class="dark-card">
+            <h3>S</h3>
+            <p><b>Opportunity acceptance threshold.</b></p>
+            <p>Opportunities before S are ignored. Opportunities after S may be used for inspection.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col_t:
+        st.markdown(
+            """
+            <div class="dark-card">
+            <h3>T</h3>
+            <p><b>Scheduled inspection interval.</b></p>
+            <p>If no renewal occurs before T, a scheduled inspection is performed at T.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown(
+        """
+        <div class="info-box">
+        The main outputs are <b>Cost rate</b>, <b>MTBOF</b>, <b>PFRBO</b>, and <b>LOM</b>. These measures help compare cost, failure exposure, successful opportunity use, and losses caused by false negative errors.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+# ---------------------------------------------------------------------
+# Tab 2: Run model
 # ---------------------------------------------------------------------
 with tab_run:
     st.markdown(
         """
         <div class="info-box">
-        Insert the policy values and model parameters below. This public version evaluates the selected policy only and does not optimize <b>S</b> and <b>T</b>.
+        Insert the policy values and model parameters below. This tab runs the analytical evaluation of the selected policy and does not optimize <b>S</b> and <b>T</b>.
         </div>
         """,
         unsafe_allow_html=True,
@@ -907,7 +981,7 @@ with tab_run:
 
 
 # ---------------------------------------------------------------------
-# Tab 2: Policy description
+# Tab 3: Policy description
 # ---------------------------------------------------------------------
 with tab_policy:
     st.markdown("## What is this policy?")
@@ -970,7 +1044,7 @@ with tab_policy:
 
 
 # ---------------------------------------------------------------------
-# Tab 3: Metrics and interpretation
+# Tab 4: Metrics and interpretation
 # ---------------------------------------------------------------------
 with tab_metrics:
     st.markdown("## Metrics and interpretation")
@@ -999,7 +1073,7 @@ with tab_metrics:
 
 
 # ---------------------------------------------------------------------
-# Tab 4: Authors and optimizer
+# Tab 5: Authors and optimizer
 # ---------------------------------------------------------------------
 with tab_authors:
     st.markdown("## Authors")
