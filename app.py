@@ -41,15 +41,15 @@ html, body, [class*="css"] {
 
 .stApp {
     background:
-        radial-gradient(circle at 8% 0%, rgba(59, 130, 246, 0.14), transparent 26%),
-        radial-gradient(circle at 92% 4%, rgba(20, 184, 166, 0.13), transparent 28%),
-        linear-gradient(180deg, #f8fafc 0%, #ffffff 42%, #f8fafc 100%);
+        radial-gradient(circle at 7% 0%, rgba(59, 130, 246, 0.13), transparent 25%),
+        radial-gradient(circle at 92% 4%, rgba(20, 184, 166, 0.12), transparent 26%),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 45%, #f8fafc 100%);
 }
 
 .block-container {
-    padding-top: 1.0rem;
-    padding-bottom: 2.2rem;
-    max-width: 1250px;
+    padding-top: 0.9rem;
+    padding-bottom: 2.1rem;
+    max-width: 1220px;
 }
 
 [data-testid="stSidebar"] {
@@ -57,7 +57,7 @@ html, body, [class*="css"] {
 }
 
 .hero {
-    padding: 1.05rem 1.25rem;
+    padding: 1.0rem 1.2rem;
     border-radius: 22px;
     background:
         radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.28), transparent 32%),
@@ -65,20 +65,20 @@ html, body, [class*="css"] {
     color: white;
     border: 1px solid rgba(226, 232, 240, 0.12);
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.20);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.55rem;
 }
 
 .hero h1 {
-    font-size: clamp(1.15rem, 1.65vw, 1.60rem);
+    font-size: clamp(1.12rem, 1.55vw, 1.50rem);
     line-height: 1.16;
-    margin-bottom: 0.30rem;
+    margin-bottom: 0.28rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     max-width: 860px;
 }
 
 .hero p {
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     color: rgba(255, 255, 255, 0.88);
     margin-bottom: 0;
     max-width: 850px;
@@ -86,19 +86,19 @@ html, body, [class*="css"] {
 
 .badge {
     display: inline-block;
-    padding: 0.18rem 0.48rem;
+    padding: 0.17rem 0.46rem;
     border-radius: 999px;
     background: rgba(14, 165, 233, 0.16);
     color: #e0f2fe;
     border: 1px solid rgba(125, 211, 252, 0.22);
-    font-size: 0.67rem;
+    font-size: 0.65rem;
     font-weight: 800;
     margin-right: 0.22rem;
-    margin-bottom: 0.34rem;
+    margin-bottom: 0.32rem;
 }
 
 .motion-box {
-    height: 74px;
+    height: 70px;
     border-radius: 22px;
     background:
         radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.25), transparent 32%),
@@ -107,14 +107,14 @@ html, body, [class*="css"] {
     position: relative;
     overflow: hidden;
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.55rem;
 }
 
 .motion-line {
     position: absolute;
     left: 12%;
     right: 12%;
-    top: 38px;
+    top: 36px;
     height: 3px;
     background: rgba(226, 232, 240, 0.62);
     border-radius: 999px;
@@ -122,7 +122,7 @@ html, body, [class*="css"] {
 
 .motion-dot {
     position: absolute;
-    top: 26px;
+    top: 24px;
     left: 12%;
     width: 24px;
     height: 24px;
@@ -134,7 +134,7 @@ html, body, [class*="css"] {
 
 .motion-marker-s {
     position: absolute;
-    top: 20px;
+    top: 18px;
     left: 34%;
     width: 4px;
     height: 38px;
@@ -144,7 +144,7 @@ html, body, [class*="css"] {
 
 .motion-marker-t {
     position: absolute;
-    top: 20px;
+    top: 18px;
     left: 78%;
     width: 4px;
     height: 38px;
@@ -154,7 +154,7 @@ html, body, [class*="css"] {
 
 .motion-label-s {
     position: absolute;
-    top: 53px;
+    top: 51px;
     left: 33%;
     color: #e0f2fe;
     font-weight: 800;
@@ -162,7 +162,7 @@ html, body, [class*="css"] {
 
 .motion-label-t {
     position: absolute;
-    top: 53px;
+    top: 51px;
     left: 77%;
     color: #dcfce7;
     font-weight: 800;
@@ -173,139 +173,99 @@ html, body, [class*="css"] {
     100% { left: 86%; }
 }
 
-.input-card {
-    border-radius: 22px;
-    padding: 1.05rem 1.15rem 1.15rem 1.15rem;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
-    margin-bottom: 1rem;
-}
-
-.input-card h3 {
-    font-size: 1.02rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-top: 0;
-    margin-bottom: 0.30rem;
-}
-
-.input-card p {
-    font-size: 0.84rem;
-    color: #64748b;
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-}
-
-.info-box {
-    border-left: 5px solid #0284c7;
-    background: #eff6ff;
-    color: #0c4a6e;
-    padding: 0.85rem 1rem;
-    border-radius: 14px;
-    margin: 0.75rem 0;
-}
-
-.warning-box {
-    border-left: 5px solid #f59e0b;
-    background: #fffbeb;
-    color: #78350f;
-    padding: 0.85rem 1rem;
-    border-radius: 14px;
-    margin: 0.75rem 0;
-}
-
-.success-box {
-    border-left: 5px solid #10b981;
-    background: #ecfdf5;
-    color: #064e3b;
-    padding: 0.85rem 1rem;
-    border-radius: 14px;
-    margin: 0.75rem 0;
-}
-
-.error-soft {
-    border-left: 5px solid #ef4444;
-    background: #fef2f2;
-    color: #7f1d1d;
-    padding: 0.85rem 1rem;
-    border-radius: 14px;
-    margin: 0.75rem 0;
-}
-
-.maintenance-strip {
-    height: 82px;
+/* Compact animated maintenance visual */
+.maintenance-gif {
+    height: 108px;
     border-radius: 22px;
     background:
-        radial-gradient(circle at 25% 40%, rgba(34, 211, 238, 0.18), transparent 28%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 52%, #075985 100%);
+        radial-gradient(circle at 25% 40%, rgba(34, 211, 238, 0.18), transparent 32%),
+        radial-gradient(circle at 82% 30%, rgba(52, 211, 153, 0.14), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #111827 50%, #0f766e 100%);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
-    margin: 0.9rem 0;
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.16);
+    margin: 0.1rem 0 0.85rem 0;
 }
 
-.gear {
+.gear-a, .gear-b {
     position: absolute;
-    width: 46px;
-    height: 46px;
-    border: 6px solid #67e8f9;
     border-radius: 50%;
-    top: 18px;
-    left: 36px;
+    border: 7px solid #67e8f9;
     animation: spinGear 4s linear infinite;
 }
 
-.gear::before {
+.gear-a {
+    width: 58px;
+    height: 58px;
+    top: 23px;
+    left: 42px;
+}
+
+.gear-b {
+    width: 38px;
+    height: 38px;
+    top: 48px;
+    left: 100px;
+    border-color: #34d399;
+    animation-direction: reverse;
+    animation-duration: 3s;
+}
+
+.gear-a::before, .gear-b::before {
     content: "";
     position: absolute;
-    width: 14px;
-    height: 14px;
     border-radius: 50%;
     background: #0f172a;
     border: 4px solid #e0f2fe;
-    top: 10px;
-    left: 10px;
 }
 
-.gear::after {
-    content: "";
+.gear-a::before {
+    width: 18px;
+    height: 18px;
+    top: 13px;
+    left: 13px;
+}
+
+.gear-b::before {
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    left: 7px;
+}
+
+.signal-line {
     position: absolute;
-    width: 74px;
-    height: 6px;
-    background: repeating-linear-gradient(90deg, #67e8f9 0 8px, transparent 8px 15px);
-    top: 14px;
-    left: 74px;
+    left: 180px;
+    right: 80px;
+    top: 54px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(226,232,240,0.2), rgba(103,232,249,0.85), rgba(52,211,153,0.8), rgba(226,232,240,0.2));
     border-radius: 999px;
-    opacity: 0.85;
 }
 
-.pulse-node {
+.signal-dot {
+    position: absolute;
+    top: 44px;
+    left: 180px;
+    width: 24px;
+    height: 24px;
+    background: #22d3ee;
+    border: 3px solid white;
+    border-radius: 50%;
+    animation: moveSignal 2.4s ease-in-out infinite;
+}
+
+.node {
     position: absolute;
     width: 18px;
     height: 18px;
     background: #22c55e;
     border: 3px solid white;
     border-radius: 50%;
-    top: 32px;
-    right: 95px;
+    top: 46px;
+    right: 44px;
     box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
     animation: pulseNode 1.7s infinite;
-}
-
-.maintenance-label {
-    position: absolute;
-    left: 150px;
-    top: 25px;
-    color: white;
-    font-size: 1.02rem;
-    font-weight: 800;
-}
-
-.maintenance-label span {
-    color: #bae6fd;
-    font-weight: 600;
-    font-size: 0.82rem;
 }
 
 @keyframes spinGear {
@@ -313,10 +273,53 @@ html, body, [class*="css"] {
     to { transform: rotate(360deg); }
 }
 
+@keyframes moveSignal {
+    0% { left: 180px; opacity: 0.35; }
+    50% { opacity: 1; }
+    100% { left: calc(100% - 105px); opacity: 0.35; }
+}
+
 @keyframes pulseNode {
     0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
-    70% { box-shadow: 0 0 0 18px rgba(34, 197, 94, 0.00); }
+    70% { box-shadow: 0 0 0 16px rgba(34, 197, 94, 0.00); }
     100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.00); }
+}
+
+.info-box {
+    border-left: 5px solid #0284c7;
+    background: #eff6ff;
+    color: #0c4a6e;
+    padding: 0.78rem 0.95rem;
+    border-radius: 14px;
+    margin: 0.65rem 0;
+    font-size: 0.92rem;
+}
+
+.warning-box {
+    border-left: 5px solid #f59e0b;
+    background: #fffbeb;
+    color: #78350f;
+    padding: 0.82rem 0.95rem;
+    border-radius: 14px;
+    margin: 0.70rem 0;
+}
+
+.success-box {
+    border-left: 5px solid #10b981;
+    background: #ecfdf5;
+    color: #064e3b;
+    padding: 0.82rem 0.95rem;
+    border-radius: 14px;
+    margin: 0.70rem 0;
+}
+
+.error-soft {
+    border-left: 5px solid #ef4444;
+    background: #fef2f2;
+    color: #7f1d1d;
+    padding: 0.82rem 0.95rem;
+    border-radius: 14px;
+    margin: 0.70rem 0;
 }
 
 .dark-card {
@@ -339,6 +342,22 @@ html, body, [class*="css"] {
 
 .dark-card p {
     color: rgba(255, 255, 255, 0.86);
+}
+
+.compact-panel {
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+    padding: 0.9rem 1rem 1rem 1rem;
+    margin-bottom: 0.80rem;
+}
+
+div[data-testid="stExpander"] {
+    border-radius: 18px !important;
+    background: rgba(255,255,255,0.96) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
 }
 
 .stButton > button {
@@ -366,8 +385,8 @@ div[data-testid="stMetric"] {
 }
 
 hr {
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 </style>
 """
@@ -631,6 +650,19 @@ tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
 with tab_run:
     st.markdown(
         """
+        <div class="maintenance-gif">
+            <div class="gear-a"></div>
+            <div class="gear-b"></div>
+            <div class="signal-line"></div>
+            <div class="signal-dot"></div>
+            <div class="node"></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
         <div class="info-box">
         Insert the policy values and model parameters below. This public version evaluates the selected policy only and does not optimize <b>S</b> and <b>T</b>.
         </div>
@@ -639,44 +671,29 @@ with tab_run:
     )
 
     with st.form("policy_form"):
-        row1_col1, row1_col2 = st.columns([0.92, 2.08], gap="medium")
+        with st.container(border=True):
+            st.markdown("#### Decision variables")
+            d1, d2 = st.columns(2)
+            with d1:
+                S = st.number_input(
+                    "S  Opportunity acceptance threshold",
+                    min_value=0.0,
+                    value=0.6076,
+                    step=0.05,
+                    format="%.4f",
+                    help="Opportunities before S are ignored. Opportunities after S may be used for inspection.",
+                )
+            with d2:
+                T = st.number_input(
+                    "T  Scheduled inspection interval",
+                    min_value=0.0001,
+                    value=2.1599,
+                    step=0.05,
+                    format="%.4f",
+                    help="Scheduled inspection is performed at T if no renewal occurs before that time.",
+                )
 
-        with row1_col1:
-            st.markdown(
-                """
-                <div class="input-card">
-                <h3>Decision variables</h3>
-                <p>Policy values chosen by the user.</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            S = st.number_input(
-                "S  Opportunity acceptance threshold",
-                min_value=0.0,
-                value=0.6076,
-                step=0.05,
-                format="%.4f",
-                help="Opportunities before S are ignored. Opportunities after S may be used for inspection.",
-            )
-            T = st.number_input(
-                "T  Scheduled inspection interval",
-                min_value=0.0001,
-                value=2.1599,
-                step=0.05,
-                format="%.4f",
-                help="Scheduled inspection is performed at T if no renewal occurs before that time.",
-            )
-            st.markdown("</div>", unsafe_allow_html=True)
-
-        with row1_col2:
-            st.markdown(
-                """
-                <div class="input-card">
-                <h3>Reliability parameters</h3>
-                <p>Degradation and opportunity occurrence.</p>
-                """,
-                unsafe_allow_html=True,
-            )
+        with st.expander("Reliability parameters", expanded=True):
             r1, r2, r3 = st.columns(3)
             with r1:
                 mu_x = st.number_input(
@@ -702,19 +719,8 @@ with tab_run:
                     step=0.10,
                     format="%.6f",
                 )
-            st.markdown("</div>", unsafe_allow_html=True)
 
-        row2_col1, row2_col2 = st.columns([1.55, 1.45], gap="medium")
-
-        with row2_col1:
-            st.markdown(
-                """
-                <div class="input-card">
-                <h3>Cost parameters</h3>
-                <p>Economic consequences of failure, prevention and inspection.</p>
-                """,
-                unsafe_allow_html=True,
-            )
+        with st.expander("Cost parameters", expanded=True):
             c1, c2, c3, c4 = st.columns(4)
             with c1:
                 c_f = st.number_input(
@@ -748,18 +754,9 @@ with tab_run:
                     step=0.10,
                     format="%.4f",
                 )
-            st.markdown("</div>", unsafe_allow_html=True)
 
-        with row2_col2:
-            st.markdown(
-                """
-                <div class="input-card">
-                <h3>Inspection quality and simulation</h3>
-                <p>False negative probabilities and Monte Carlo settings.</p>
-                """,
-                unsafe_allow_html=True,
-            )
-            q1, q2 = st.columns(2)
+        with st.expander("Inspection quality and simulation", expanded=True):
+            q1, q2, q3, q4 = st.columns([1.2, 1.2, 1.0, 0.85])
             with q1:
                 beta_s = st.slider(
                     "βs  Scheduled inspection false negative",
@@ -767,13 +764,6 @@ with tab_run:
                     max_value=1.0,
                     value=0.0,
                     step=0.01,
-                )
-                n_cycles = st.number_input(
-                    "Number of simulated decision steps",
-                    min_value=1_000,
-                    max_value=2_000_000,
-                    value=100_000,
-                    step=10_000,
                 )
             with q2:
                 beta_o = st.slider(
@@ -783,6 +773,15 @@ with tab_run:
                     value=0.0,
                     step=0.01,
                 )
+            with q3:
+                n_cycles = st.number_input(
+                    "Number of simulated decision steps",
+                    min_value=1_000,
+                    max_value=2_000_000,
+                    value=100_000,
+                    step=10_000,
+                )
+            with q4:
                 seed = st.number_input(
                     "Random seed",
                     min_value=0,
@@ -790,7 +789,6 @@ with tab_run:
                     value=42,
                     step=1,
                 )
-            st.markdown("</div>", unsafe_allow_html=True)
 
         submitted = st.form_submit_button("Run policy evaluation", type="primary", use_container_width=True)
 
@@ -858,8 +856,12 @@ with tab_policy:
 
     st.markdown(
         """
-        <div class="info-box">
-        The policy combines two inspection modes for a critical system. The first mode is an opportunistic inspection, which may be performed when an external operational event creates a favorable inspection moment. The second mode is a scheduled inspection, which occurs at a planned time limit.
+        <div class="maintenance-gif">
+            <div class="gear-a"></div>
+            <div class="gear-b"></div>
+            <div class="signal-line"></div>
+            <div class="signal-dot"></div>
+            <div class="node"></div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -867,10 +869,8 @@ with tab_policy:
 
     st.markdown(
         """
-        <div class="maintenance-strip">
-            <div class="gear"></div>
-            <div class="pulse-node"></div>
-            <div class="maintenance-label">Maintenance decision loop<br><span>defect detection, inspection timing and renewal</span></div>
+        <div class="info-box">
+        The policy combines two inspection modes for a critical system. The first mode is an opportunistic inspection, which may be performed when an external operational event creates a favorable inspection moment. The second mode is a scheduled inspection, which occurs at a planned time limit.
         </div>
         """,
         unsafe_allow_html=True,
@@ -929,17 +929,6 @@ with tab_policy:
 # ---------------------------------------------------------------------
 with tab_metrics:
     st.markdown("## Metrics and interpretation")
-
-    st.markdown(
-        """
-        <div class="maintenance-strip">
-            <div class="gear"></div>
-            <div class="pulse-node"></div>
-            <div class="maintenance-label">Performance monitoring<br><span>cost, failures, useful opportunities and missed detections</span></div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
 
     col_1, col_2 = st.columns(2)
 
