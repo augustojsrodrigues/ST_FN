@@ -10,12 +10,11 @@ It does not optimize S and T and does not run differential evolution.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, Tuple
+from typing import Dict
 
 import numpy as np
 import pandas as pd
 import streamlit as st
-import plotly.express as px
 
 
 # ---------------------------------------------------------------------
@@ -237,9 +236,15 @@ class PolicyInputs:
 # ---------------------------------------------------------------------
 # Simulation model
 # ---------------------------------------------------------------------
-def run_policy_simulation(inputs: PolicyInputs) -> Tuple[Dict[str, float], pd.DataFrame]:
+def run_policy_simulation(inputs: PolicyInputs) -> Dict[str, float]:
     """
     Evaluate the modified-opportunistic inspection policy for fixed S and T.
+
+    Outputs:
+    - Cost rate;
+    - MTBOF;
+    - PFRBO;
+    - LOM.
     """
     rng = np.random.default_rng(inputs.seed)
 
@@ -419,28 +424,13 @@ def run_policy_simulation(inputs: PolicyInputs) -> Tuple[Dict[str, float], pd.Da
     mtbof = life / failure_count if failure_count > 0 else np.inf
     lom = (counters[3] + counters[6] + counters[7] + counters[12] + counters[17] + counters[18]) / n
     pfrbo = (counters[2] + counters[11]) / n
-    total_probability = counters.sum() / n
 
-    case_df = pd.DataFrame(
-        {
-            "Case": [f"P{i}" for i in range(1, 21)],
-            "Count": counters,
-            "Probability": counters / n,
-        }
-    )
-
-    results = {
+    return {
         "Cost rate": cost_rate,
         "MTBOF": mtbof,
         "PFRBO": pfrbo,
         "LOM": lom,
-        "Total probability": total_probability,
-        "Total cost": cost,
-        "Total simulated life": life,
-        "Operational failures": int(failure_count),
     }
-
-    return results, case_df
 
 
 # ---------------------------------------------------------------------
@@ -537,7 +527,7 @@ with tab_run:
     st.markdown(
         """
         <div class="card">
-        <b>Policy structure.</b> The user defines the threshold <b>S</b>, from which opportunities may be accepted, and the scheduled inspection interval <b>T</b>. The app estimates the cost rate, MTBOF, PFRBO, LOM, and the probability of each event case.
+        <b>Policy structure.</b> The user defines the threshold <b>S</b>, from which opportunities may be accepted, and the scheduled inspection interval <b>T</b>. The app estimates only the four main outputs: cost rate, MTBOF, PFRBO, and LOM.
         </div>
         """,
         unsafe_allow_html=True,
@@ -576,21 +566,20 @@ with tab_run:
             )
 
             with st.spinner("Running Monte Carlo simulation..."):
-                results, case_df = run_policy_simulation(inputs)
+                results = run_policy_simulation(inputs)
 
             st.markdown(
                 '<div class="success-box"><b>Simulation completed.</b> Results below evaluate the selected policy only. No optimization was performed.</div>',
                 unsafe_allow_html=True,
             )
 
-            m1, m2, m3, m4, m5 = st.columns(5)
+            m1, m2, m3, m4 = st.columns(4)
             m1.metric("Cost rate", f"{results['Cost rate']:.4f}")
             m2.metric("MTBOF", "∞" if np.isinf(results["MTBOF"]) else f"{results['MTBOF']:.4f}")
             m3.metric("PFRBO", f"{results['PFRBO']:.4f}")
             m4.metric("LOM", f"{results['LOM']:.4f}")
-            m5.metric("Total probability", f"{results['Total probability']:.4f}")
 
-            st.caption("MTBOF is the mean time between operational failures. PFRBO measures the proportion of cycles renewed by successful opportunities. LOM measures the proportion of cycles in which opportunities are lost due to false negative effects.")
+            st.caption("Cost rate is the long-run cost per unit of simulated operating time. MTBOF is the mean time between operational failures. PFRBO measures successful failure prevention by opportunities. LOM measures opportunity loss caused by false negative effects.")
 
             st.markdown("### Inputs used in this run")
             input_df = pd.DataFrame(
@@ -611,26 +600,6 @@ with tab_run:
                 columns=["Symbol", "Factor", "Value"],
             )
             st.dataframe(input_df, use_container_width=True, hide_index=True)
-
-            st.markdown("### Event case probabilities")
-            fig = px.bar(
-                case_df,
-                x="Case",
-                y="Probability",
-                text=case_df["Probability"].map(lambda v: f"{v:.3f}"),
-                title="Probability of each event case",
-            )
-            fig.update_layout(
-                height=430,
-                margin=dict(l=20, r=20, t=55, b=20),
-                yaxis_title="Probability",
-                xaxis_title="Event case",
-            )
-            fig.update_traces(textposition="outside", cliponaxis=False)
-            st.plotly_chart(fig, use_container_width=True)
-
-            with st.expander("View detailed case table", expanded=False):
-                st.dataframe(case_df, use_container_width=True, hide_index=True)
 
 
 # ---------------------------------------------------------------------
