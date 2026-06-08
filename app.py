@@ -439,25 +439,22 @@ def run_policy_simulation(inputs: PolicyInputs) -> Dict[str, float]:
 st.sidebar.markdown("## Policy inputs")
 st.sidebar.caption("Insert policy values and system parameters. This version evaluates the policy without optimization.")
 
-preset = st.sidebar.selectbox(
-    "Base scenario",
-    [
-        "Article base case",
-        "Original code example",
-        "High opportunistic false negative",
-        "High scheduled false negative",
-        "Custom",
-    ],
+# Default values shown when the app opens.
+# Users can edit all parameters directly in the sidebar.
+d = dict(
+    S=0.6076,
+    T=2.1599,
+    mu_x=2.0,
+    mu_h=1.0,
+    mu_z=1.0,
+    c_i=0.5,
+    c_o=0.2,
+    c_p=1.0,
+    c_f=5.0,
+    beta_s=0.0,
+    beta_o=0.0,
+    n_cycles=100_000,
 )
-
-defaults = {
-    "Article base case": dict(S=0.6076, T=2.1599, mu_x=2.0, mu_h=1.0, mu_z=1.0, c_i=0.5, c_o=0.2, c_p=1.0, c_f=5.0, beta_s=0.0, beta_o=0.0, n_cycles=100_000),
-    "Original code example": dict(S=0.287, T=1.141, mu_x=2.0, mu_h=1.0, mu_z=0.5, c_i=0.6, c_o=0.3, c_p=1.0, c_f=10.0, beta_s=0.0, beta_o=0.30, n_cycles=100_000),
-    "High opportunistic false negative": dict(S=0.50, T=2.00, mu_x=2.0, mu_h=1.0, mu_z=1.0, c_i=0.5, c_o=0.2, c_p=1.0, c_f=5.0, beta_s=0.0, beta_o=0.35, n_cycles=100_000),
-    "High scheduled false negative": dict(S=0.70, T=2.50, mu_x=2.0, mu_h=1.0, mu_z=1.0, c_i=0.5, c_o=0.2, c_p=1.0, c_f=5.0, beta_s=0.25, beta_o=0.0, n_cycles=100_000),
-    "Custom": dict(S=0.6076, T=2.1599, mu_x=2.0, mu_h=1.0, mu_z=1.0, c_i=0.5, c_o=0.2, c_p=1.0, c_f=5.0, beta_s=0.0, beta_o=0.0, n_cycles=100_000),
-}
-d = defaults[preset]
 
 with st.sidebar.expander("Decision variables", expanded=True):
     S = st.number_input("S  Opportunity acceptance threshold", min_value=0.0, value=float(d["S"]), step=0.05, format="%.4f")
