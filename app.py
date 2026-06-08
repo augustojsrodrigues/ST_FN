@@ -4,7 +4,7 @@ Streamlit app for the paper:
 Monte Carlo simulation for opportunistic inspection planning under misclassification errors
 
 This app evaluates a user-defined policy (S, T) by Monte Carlo simulation.
-It does not optimize S and T and does not run differential evolution.
+It does not optimize 𝑆 and 𝑇 and does not run differential evolution.
 """
 
 from __future__ import annotations
@@ -89,7 +89,7 @@ html, body, [class*="css"] {
     padding: 0.17rem 0.46rem;
     border-radius: 999px;
     background: rgba(14, 165, 233, 0.16);
-    color: #e0f2fe;
+    color: #ffffff;
     border: 1px solid rgba(125, 211, 252, 0.22);
     font-size: 0.65rem;
     font-weight: 800;
@@ -154,17 +154,17 @@ html, body, [class*="css"] {
 
 .motion-label-s {
     position: absolute;
-    top: 49px;
+    top: 42px;
     left: 33%;
-    color: #e0f2fe;
+    color: #ffffff;
     font-weight: 800;
 }
 
 .motion-label-t {
     position: absolute;
-    top: 49px;
+    top: 42px;
     left: 77%;
-    color: #dcfce7;
+    color: #ffffff;
     font-weight: 800;
 }
 
@@ -459,6 +459,140 @@ hr {
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;
 }
+
+.presentation-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1rem;
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.presentation-main {
+    border-radius: 24px;
+    padding: 1.2rem 1.25rem;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.18), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.presentation-main h2 {
+    font-size: 1.35rem;
+    line-height: 1.22;
+    margin-bottom: 0.55rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.presentation-main p {
+    color: #334155;
+    font-size: 0.96rem;
+    line-height: 1.58;
+    margin-bottom: 0;
+}
+
+.presentation-side {
+    border-radius: 24px;
+    padding: 1.05rem 1.15rem;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.20), transparent 35%),
+        linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: white;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+.presentation-side h3 {
+    font-size: 1.0rem;
+    margin-bottom: 0.6rem;
+    color: white;
+}
+
+.presentation-side ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.presentation-side li {
+    margin-bottom: 0.45rem;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 0.92rem;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin: 0.8rem 0 1.0rem 0;
+}
+
+.feature-card {
+    border-radius: 18px;
+    padding: 0.95rem 0.95rem;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    min-height: 118px;
+}
+
+.feature-card h3 {
+    font-size: 0.98rem;
+    margin: 0 0 0.35rem 0;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.feature-card p {
+    font-size: 0.86rem;
+    margin: 0;
+    color: #475569;
+    line-height: 1.45;
+}
+
+.policy-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin-top: 0.7rem;
+}
+
+.policy-mini-card {
+    border-radius: 20px;
+    padding: 1rem;
+    background:
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 36%),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    min-height: 130px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+}
+
+.policy-mini-card h3 {
+    font-size: 1.6rem;
+    color: white;
+    margin: 0 0 0.25rem 0;
+}
+
+.policy-mini-card p {
+    font-size: 0.90rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+    .presentation-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .policy-mini {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
@@ -701,8 +835,8 @@ with top_right:
             <div class="motion-line"></div>
             <div class="motion-marker-s"></div>
             <div class="motion-marker-t"></div>
-            <div class="motion-label-s">S</div>
-            <div class="motion-label-t">T</div>
+            <div class="motion-label-s">𝑆</div>
+            <div class="motion-label-t">𝑇</div>
             <div class="motion-dot"></div>
         </div>
         """,
@@ -721,68 +855,69 @@ tab_home, tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
 with tab_home:
     st.markdown(
         """
-        <div class="info-box">
-        <b>Welcome.</b> This application evaluates a modified-opportunistic inspection policy under false negative errors. It is designed as an analytical interface associated with the paper <b>Monte Carlo simulation for opportunistic inspection planning under misclassification errors</b>.
+        <div class="presentation-grid">
+            <div class="presentation-main">
+                <h2>Analytical interface for the inspection policy</h2>
+                <p>
+                This application evaluates the maintenance policy proposed in the article
+                <b>Monte Carlo simulation for opportunistic inspection planning under misclassification errors</b>.
+                The public version is intended for analytical evaluation. The user defines <i>S</i> and <i>T</i>,
+                inserts the model parameters, and obtains the four main performance outputs.
+                </p>
+            </div>
+            <div class="presentation-side">
+                <h3>What this version provides</h3>
+                <ul>
+                    <li>Monte Carlo evaluation for a fixed policy;</li>
+                    <li>false negative errors in scheduled and opportunistic inspections;</li>
+                    <li>cost and reliability performance indicators;</li>
+                    <li>no optimization of <i>S</i> and <i>T</i>.</li>
+                </ul>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
-    c1, c2, c3 = st.columns(3)
-
-    with c1:
-        with st.container(border=True):
-            st.markdown("### What the app does")
-            st.write(
-                "The app evaluates a user-defined pair of decision variables, S and T, using Monte Carlo simulation. It returns the main performance measures of the selected policy."
-            )
-
-    with c2:
-        with st.container(border=True):
-            st.markdown("### What the app does not do")
-            st.write(
-                "This public version does not optimize S and T. It does not run differential evolution and it does not provide the optimal inspection policy."
-            )
-
-    with c3:
-        with st.container(border=True):
-            st.markdown("### How to use")
-            st.write(
-                "Open the Run model tab, insert the policy and system parameters, and click Run policy evaluation to obtain the results."
-            )
+    st.markdown(
+        """
+        <div class="feature-row">
+            <div class="feature-card">
+                <h3>Policy evaluation</h3>
+                <p>The app evaluates one pair of decision variables selected by the user.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Monte Carlo simulation</h3>
+                <p>The stochastic process is simulated to estimate long-run performance.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Inspection quality</h3>
+                <p>False negative probabilities can be assigned to both inspection modes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Research version</h3>
+                <p>The optimizer is not public. Contact the authors for the optimization version.</p>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     st.markdown("### Policy idea")
 
-    col_s, col_t = st.columns(2)
-
-    with col_s:
-        st.markdown(
-            """
-            <div class="dark-card">
-            <h3>S</h3>
-            <p><b>Opportunity acceptance threshold.</b></p>
-            <p>Opportunities before S are ignored. Opportunities after S may be used for inspection.</p>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    with col_t:
-        st.markdown(
-            """
-            <div class="dark-card">
-            <h3>T</h3>
-            <p><b>Scheduled inspection interval.</b></p>
-            <p>If no renewal occurs before T, a scheduled inspection is performed at T.</p>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
     st.markdown(
         """
-        <div class="info-box">
-        The main outputs are <b>Cost rate</b>, <b>MTBOF</b>, <b>PFRBO</b>, and <b>LOM</b>. These measures help compare cost, failure exposure, successful opportunity use, and losses caused by false negative errors.
+        <div class="policy-mini">
+            <div class="policy-mini-card">
+                <h3><i>S</i></h3>
+                <p><b>Opportunity acceptance threshold.</b><br>
+                Opportunities before <i>S</i> are ignored. Opportunities after <i>S</i> may be used for inspection.</p>
+            </div>
+            <div class="policy-mini-card">
+                <h3><i>T</i></h3>
+                <p><b>Scheduled inspection interval.</b><br>
+                If no renewal occurs before <i>T</i>, a scheduled inspection is performed at <i>T</i>.</p>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -796,7 +931,7 @@ with tab_run:
     st.markdown(
         """
         <div class="info-box">
-        Insert the policy values and model parameters below. This tab runs the analytical evaluation of the selected policy and does not optimize <b>S</b> and <b>T</b>.
+        Insert the policy values and model parameters below. This tab runs the analytical evaluation of the selected policy and does not optimize <b><i>S</i></b> and <b><i>T</i></b>.
         </div>
         """,
         unsafe_allow_html=True,
@@ -808,21 +943,21 @@ with tab_run:
             d1, d2 = st.columns(2)
             with d1:
                 S = st.number_input(
-                    "S  Opportunity acceptance threshold",
+                    "𝑆  Opportunity acceptance threshold",
                     min_value=0.0,
                     value=0.6076,
                     step=0.05,
                     format="%.4f",
-                    help="Opportunities before S are ignored. Opportunities after S may be used for inspection.",
+                    help="Opportunities before <i>S</i> are ignored. Opportunities after <i>S</i> may be used for inspection.",
                 )
             with d2:
                 T = st.number_input(
-                    "T  Scheduled inspection interval",
+                    "𝑇  Scheduled inspection interval",
                     min_value=0.0001,
                     value=2.1599,
                     step=0.05,
                     format="%.4f",
-                    help="Scheduled inspection is performed at T if no renewal occurs before that time.",
+                    help="Scheduled inspection is performed at <i>T</i> if no renewal occurs before that time.",
                 )
 
         with st.expander("Reliability parameters", expanded=True):
@@ -928,7 +1063,7 @@ with tab_run:
         st.markdown(
             """
             <div class="warning-box">
-            <b>Invalid policy.</b> The opportunity threshold <b>S</b> must be smaller than the scheduled inspection interval <b>T</b>. Please set <b>S &lt; T</b> before running the model.
+            <b>Invalid policy.</b> The opportunity threshold <b><i>S</i></b> must be smaller than the scheduled inspection interval <b><i>T</i></b>. Please set <b><i>S</i> &lt; <i>T</i></b> before running the model.
             </div>
             """,
             unsafe_allow_html=True,
@@ -1001,9 +1136,9 @@ with tab_policy:
         st.markdown(
             """
             <div class="dark-card">
-            <h3>S</h3>
+            <h3><i>S</i></h3>
             <p><b>Opportunity acceptance threshold.</b></p>
-            <p>Opportunities that occur before S are ignored. Opportunities that occur after S may be used for inspection.</p>
+            <p>Opportunities that occur before <i>S</i> are ignored. Opportunities that occur after <i>S</i> may be used for inspection.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1013,9 +1148,9 @@ with tab_policy:
         st.markdown(
             """
             <div class="dark-card">
-            <h3>T</h3>
+            <h3><i>T</i></h3>
             <p><b>Scheduled inspection interval.</b></p>
-            <p>If no renewal occurs before T, a scheduled inspection is performed at T.</p>
+            <p>If no renewal occurs before <i>T</i>, a scheduled inspection is performed at <i>T</i>.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1036,7 +1171,7 @@ with tab_policy:
     st.markdown(
         """
         <div class="info-box">
-        <b>Important.</b> This software evaluates the policy for the values of S and T selected by the user. It does not search for the optimal values of S and T.
+        <b>Important.</b> This software evaluates the policy for the values of 𝑆 and 𝑇 selected by the user. It does not search for the optimal values of 𝑆 and 𝑇.
         </div>
         """,
         unsafe_allow_html=True,
@@ -1095,7 +1230,7 @@ with tab_authors:
     st.markdown(
         """
         <div class="error-soft">
-        <b>This public app does not optimize S and T.</b> It only evaluates the policy for values chosen by the user. It does not run differential evolution and it does not provide the optimal policy.
+        <b>This public app does not optimize 𝑆 and 𝑇.</b> It only evaluates the policy for values chosen by the user. It does not run differential evolution and it does not provide the optimal policy.
         </div>
         """,
         unsafe_allow_html=True,
