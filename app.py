@@ -914,17 +914,6 @@ with tab_policy:
 
     st.markdown(
         """
-        <div class="mini-maintenance-gif">
-            <div class="mini-gear-a"></div>
-            <div class="mini-gear-b"></div>
-            <div class="mini-pulse"></div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(
-        """
         <div class="info-box">
         The policy combines two inspection modes for a critical system. The first mode is an opportunistic inspection, which may be performed when an external operational event creates a favorable inspection moment. The second mode is a scheduled inspection, which occurs at a planned time limit.
         </div>
