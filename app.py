@@ -593,6 +593,142 @@ hr {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------------------------------------------------------------------
+   Readability fix for light and dark appearance modes
+   --------------------------------------------------------------------- */
+:root {
+    color-scheme: light;
+}
+
+/* Force the application content to keep a light, paper-like interface
+   even when the browser or Streamlit is in dark mode. */
+.stApp {
+    color: #0f172a !important;
+}
+
+/* Text elements */
+label, p, span, div, h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+}
+
+/* Input wrappers */
+div[data-testid="stNumberInput"] label,
+div[data-testid="stSlider"] label,
+div[data-testid="stTextInput"] label,
+div[data-testid="stSelectbox"] label {
+    color: #0f172a !important;
+    font-weight: 500;
+}
+
+/* Number input and text input fields */
+div[data-testid="stNumberInput"] input,
+div[data-testid="stTextInput"] input {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    border-radius: 12px !important;
+}
+
+/* Plus and minus buttons in number inputs */
+div[data-testid="stNumberInput"] button {
+    background-color: #eef2f7 !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Slider text, values and marks */
+div[data-testid="stSlider"] {
+    color: #0f172a !important;
+}
+
+div[data-testid="stSlider"] div,
+div[data-testid="stSlider"] span,
+div[data-testid="stSlider"] p {
+    color: #0f172a !important;
+}
+
+/* Expander headers and bordered containers */
+div[data-testid="stExpander"],
+div[data-testid="stExpander"] details,
+div[data-testid="stExpander"] summary {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    color: #0f172a !important;
+}
+
+div[data-testid="stExpander"] summary p,
+div[data-testid="stExpander"] summary span {
+    color: #0f172a !important;
+}
+
+/* Generic bordered containers used by st.container(border=True) */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.10) !important;
+}
+
+/* Dataframes and metric cards */
+div[data-testid="stMetric"],
+div[data-testid="stMetric"] label,
+div[data-testid="stMetric"] div {
+    color: #0f172a !important;
+}
+
+div[data-testid="stDataFrame"] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    color: #0f172a !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #ef4444 !important;
+}
+
+/* Markdown text outside dark custom cards */
+.stMarkdown {
+    color: #0f172a;
+}
+
+/* Keep custom dark cards readable */
+.hero, .hero *,
+.motion-box, .motion-box *,
+.dark-card, .dark-card *,
+.presentation-side, .presentation-side *,
+.policy-mini-card, .policy-mini-card * {
+    color: white !important;
+}
+
+/* Keep badges readable */
+.badge {
+    color: #e0f2fe !important;
+}
+
+/* Info boxes */
+.info-box, .warning-box, .success-box, .error-soft {
+    color: inherit !important;
+}
+
+.info-box * {
+    color: #0c4a6e !important;
+}
+
+.warning-box * {
+    color: #78350f !important;
+}
+
+.success-box * {
+    color: #064e3b !important;
+}
+
+.error-soft * {
+    color: #7f1d1d !important;
+}
+
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
