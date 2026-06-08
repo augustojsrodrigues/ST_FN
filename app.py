@@ -51,49 +51,50 @@ html, body, [class*="css"] {
 
 .hero {
     position: relative;
-    padding: 1.8rem 2rem;
-    border-radius: 28px;
+    padding: 1.15rem 1.35rem;
+    border-radius: 22px;
     background:
         radial-gradient(circle at top left, rgba(45, 212, 191, 0.35), transparent 34%),
         radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.35), transparent 34%),
         linear-gradient(135deg, #020617 0%, #0f172a 42%, #164e63 100%);
     color: white;
-    box-shadow: 0 24px 65px rgba(15, 23, 42, 0.25);
-    margin-bottom: 1.1rem;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.20);
+    margin-bottom: 0.75rem;
     overflow: hidden;
 }
 
 .hero h1 {
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-    line-height: 1.08;
-    margin-bottom: 0.55rem;
+    font-size: clamp(1.45rem, 2.6vw, 2.25rem);
+    line-height: 1.10;
+    margin-bottom: 0.35rem;
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.035em;
+    max-width: 860px;
 }
 
 .hero p {
-    font-size: 1.04rem;
-    opacity: 0.92;
+    font-size: 0.95rem;
+    opacity: 0.90;
     margin-bottom: 0;
-    max-width: 860px;
+    max-width: 900px;
 }
 
 .badge {
     display: inline-block;
-    padding: 0.28rem 0.62rem;
+    padding: 0.22rem 0.52rem;
     border-radius: 999px;
     background: rgba(224, 242, 254, 0.14);
     color: #e0f2fe;
     border: 1px solid rgba(224, 242, 254, 0.24);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 750;
-    margin-right: 0.35rem;
-    margin-bottom: 0.55rem;
+    margin-right: 0.28rem;
+    margin-bottom: 0.38rem;
 }
 
 .panel {
-    border-radius: 24px;
-    padding: 1.15rem 1.2rem;
+    border-radius: 20px;
+    padding: 0.95rem 1rem;
     background: #ffffff;
     border: 1px solid rgba(15, 23, 42, 0.08);
     box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
@@ -125,7 +126,7 @@ html, body, [class*="css"] {
 
 .dark-card {
     border-radius: 22px;
-    padding: 1.15rem 1.2rem;
+    padding: 0.95rem 1rem;
     background:
         radial-gradient(circle at top right, rgba(45, 212, 191, 0.18), transparent 42%),
         linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -182,22 +183,22 @@ html, body, [class*="css"] {
 }
 
 .motion-box {
-    height: 130px;
-    border-radius: 24px;
+    height: 72px;
+    border-radius: 20px;
     background:
         radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.35), transparent 32%),
         linear-gradient(135deg, #020617, #1e3a8a, #0f766e);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
-    margin-bottom: 1rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+    margin-bottom: 0.65rem;
 }
 
 .motion-line {
     position: absolute;
     left: 9%;
     right: 9%;
-    top: 66px;
+    top: 36px;
     height: 4px;
     background: rgba(226, 232, 240, 0.78);
     border-radius: 999px;
@@ -205,7 +206,7 @@ html, body, [class*="css"] {
 
 .motion-dot {
     position: absolute;
-    top: 52px;
+    top: 23px;
     left: 9%;
     width: 28px;
     height: 28px;
@@ -217,27 +218,27 @@ html, body, [class*="css"] {
 
 .motion-marker-s {
     position: absolute;
-    top: 38px;
+    top: 17px;
     left: 34%;
     width: 4px;
-    height: 58px;
+    height: 38px;
     background: #38bdf8;
     border-radius: 999px;
 }
 
 .motion-marker-t {
     position: absolute;
-    top: 38px;
+    top: 17px;
     left: 78%;
     width: 4px;
-    height: 58px;
+    height: 38px;
     background: #22c55e;
     border-radius: 999px;
 }
 
 .motion-label-s {
     position: absolute;
-    top: 99px;
+    top: 53px;
     left: 33%;
     color: #e0f2fe;
     font-weight: 800;
@@ -245,7 +246,7 @@ html, body, [class*="css"] {
 
 .motion-label-t {
     position: absolute;
-    top: 99px;
+    top: 53px;
     left: 77%;
     color: #dcfce7;
     font-weight: 800;
@@ -503,32 +504,36 @@ def run_policy_simulation(inputs: PolicyInputs) -> Dict[str, float]:
 # ---------------------------------------------------------------------
 # Header
 # ---------------------------------------------------------------------
-st.markdown(
-    """
-    <div class="hero">
-        <span class="badge">Monte Carlo simulation</span>
-        <span class="badge">Opportunistic inspection</span>
-        <span class="badge">Misclassification errors</span>
-        <h1>Monte Carlo simulation for opportunistic inspection planning under misclassification errors</h1>
-        <p>Analytical app for evaluating a fixed pair <b>(S, T)</b> in a scheduled and opportunistic inspection policy with false negative errors.</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+top_left, top_right = st.columns([0.70, 0.30], vertical_alignment="center")
 
-st.markdown(
-    """
-    <div class="motion-box">
-        <div class="motion-line"></div>
-        <div class="motion-marker-s"></div>
-        <div class="motion-marker-t"></div>
-        <div class="motion-label-s">S</div>
-        <div class="motion-label-t">T</div>
-        <div class="motion-dot"></div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+with top_left:
+    st.markdown(
+        """
+        <div class="hero">
+            <span class="badge">Monte Carlo simulation</span>
+            <span class="badge">Opportunistic inspection</span>
+            <span class="badge">Misclassification errors</span>
+            <h1>Monte Carlo simulation for opportunistic inspection planning under misclassification errors</h1>
+            <p>Evaluate a fixed pair <b>(S, T)</b> in a scheduled and opportunistic inspection policy with false negative errors.</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with top_right:
+    st.markdown(
+        """
+        <div class="motion-box">
+            <div class="motion-line"></div>
+            <div class="motion-marker-s"></div>
+            <div class="motion-marker-t"></div>
+            <div class="motion-label-s">S</div>
+            <div class="motion-label-t">T</div>
+            <div class="motion-dot"></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 tab_run, tab_policy, tab_metrics, tab_authors = st.tabs(
