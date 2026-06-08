@@ -41,15 +41,15 @@ html, body, [class*="css"] {
 
 .stApp {
     background:
-        radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.08), transparent 26%),
-        radial-gradient(circle at 85% 0%, rgba(14, 165, 233, 0.08), transparent 24%),
+        radial-gradient(circle at 8% 0%, rgba(59, 130, 246, 0.14), transparent 26%),
+        radial-gradient(circle at 92% 4%, rgba(20, 184, 166, 0.13), transparent 28%),
         linear-gradient(180deg, #f8fafc 0%, #ffffff 42%, #f8fafc 100%);
 }
 
 .block-container {
     padding-top: 1.0rem;
     padding-bottom: 2.2rem;
-    max-width: 1220px;
+    max-width: 1250px;
 }
 
 [data-testid="stSidebar"] {
@@ -60,25 +60,26 @@ html, body, [class*="css"] {
     padding: 1.05rem 1.25rem;
     border-radius: 22px;
     background:
-        linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #075985 100%);
+        radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.28), transparent 32%),
+        linear-gradient(135deg, #020617 0%, #0f172a 45%, #1e3a8a 100%);
     color: white;
     border: 1px solid rgba(226, 232, 240, 0.12);
-    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
-    margin-bottom: 0.75rem;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.20);
+    margin-bottom: 0.65rem;
 }
 
 .hero h1 {
-    font-size: clamp(1.15rem, 1.7vw, 1.65rem);
+    font-size: clamp(1.15rem, 1.65vw, 1.60rem);
     line-height: 1.16;
     margin-bottom: 0.30rem;
     font-weight: 800;
     letter-spacing: -0.025em;
-    max-width: 850px;
+    max-width: 860px;
 }
 
 .hero p {
     font-size: 0.86rem;
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(255, 255, 255, 0.88);
     margin-bottom: 0;
     max-width: 850px;
 }
@@ -100,12 +101,13 @@ html, body, [class*="css"] {
     height: 74px;
     border-radius: 22px;
     background:
-        linear-gradient(135deg, #111827 0%, #0f172a 48%, #1e40af 100%);
+        radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.25), transparent 32%),
+        linear-gradient(135deg, #020617 0%, #0f172a 48%, #0f766e 100%);
     border: 1px solid rgba(226, 232, 240, 0.12);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
-    margin-bottom: 0.75rem;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+    margin-bottom: 0.65rem;
 }
 
 .motion-line {
@@ -171,26 +173,35 @@ html, body, [class*="css"] {
     100% { left: 86%; }
 }
 
-.section-title {
-    margin-top: 0.2rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.06rem;
-    font-weight: 800;
-    color: #0f172a;
+.input-card {
+    border-radius: 22px;
+    padding: 1.05rem 1.15rem 1.15rem 1.15rem;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+    margin-bottom: 1rem;
 }
 
-.help-text {
-    margin-top: -0.25rem;
-    margin-bottom: 0.7rem;
+.input-card h3 {
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.30rem;
+}
+
+.input-card p {
+    font-size: 0.84rem;
     color: #64748b;
-    font-size: 0.88rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
 }
 
 .info-box {
     border-left: 5px solid #0284c7;
     background: #eff6ff;
     color: #0c4a6e;
-    padding: 0.95rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 14px;
     margin: 0.75rem 0;
 }
@@ -199,7 +210,7 @@ html, body, [class*="css"] {
     border-left: 5px solid #f59e0b;
     background: #fffbeb;
     color: #78350f;
-    padding: 0.95rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 14px;
     margin: 0.75rem 0;
 }
@@ -208,7 +219,7 @@ html, body, [class*="css"] {
     border-left: 5px solid #10b981;
     background: #ecfdf5;
     color: #064e3b;
-    padding: 0.95rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 14px;
     margin: 0.75rem 0;
 }
@@ -217,9 +228,95 @@ html, body, [class*="css"] {
     border-left: 5px solid #ef4444;
     background: #fef2f2;
     color: #7f1d1d;
-    padding: 0.95rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 14px;
     margin: 0.75rem 0;
+}
+
+.maintenance-strip {
+    height: 82px;
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 25% 40%, rgba(34, 211, 238, 0.18), transparent 28%),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 52%, #075985 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+    margin: 0.9rem 0;
+}
+
+.gear {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    border: 6px solid #67e8f9;
+    border-radius: 50%;
+    top: 18px;
+    left: 36px;
+    animation: spinGear 4s linear infinite;
+}
+
+.gear::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 4px solid #e0f2fe;
+    top: 10px;
+    left: 10px;
+}
+
+.gear::after {
+    content: "";
+    position: absolute;
+    width: 74px;
+    height: 6px;
+    background: repeating-linear-gradient(90deg, #67e8f9 0 8px, transparent 8px 15px);
+    top: 14px;
+    left: 74px;
+    border-radius: 999px;
+    opacity: 0.85;
+}
+
+.pulse-node {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #22c55e;
+    border: 3px solid white;
+    border-radius: 50%;
+    top: 32px;
+    right: 95px;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+    animation: pulseNode 1.7s infinite;
+}
+
+.maintenance-label {
+    position: absolute;
+    left: 150px;
+    top: 25px;
+    color: white;
+    font-size: 1.02rem;
+    font-weight: 800;
+}
+
+.maintenance-label span {
+    color: #bae6fd;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+@keyframes spinGear {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulseNode {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+    70% { box-shadow: 0 0 0 18px rgba(34, 197, 94, 0.00); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.00); }
 }
 
 .dark-card {
@@ -244,25 +341,19 @@ html, body, [class*="css"] {
     color: rgba(255, 255, 255, 0.86);
 }
 
-div[data-testid="stVerticalBlockBorderWrapper"] {
-    border-radius: 20px !important;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
-    background: rgba(255, 255, 255, 0.92);
-}
-
 .stButton > button {
     border-radius: 14px !important;
     height: 3rem;
     font-weight: 800 !important;
     font-size: 1.0rem !important;
-    background: #1d4ed8 !important;
-    border: 1px solid #1d4ed8 !important;
+    background: linear-gradient(135deg, #1d4ed8, #0f766e) !important;
+    border: 0 !important;
     color: white !important;
+    box-shadow: 0 10px 24px rgba(29, 78, 216, 0.22);
 }
 
 .stButton > button:hover {
-    background: #1e40af !important;
-    border: 1px solid #1e40af !important;
+    background: linear-gradient(135deg, #1e40af, #0f766e) !important;
     color: white !important;
 }
 
@@ -275,8 +366,8 @@ div[data-testid="stMetric"] {
 }
 
 hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 </style>
 """
@@ -548,10 +639,17 @@ with tab_run:
     )
 
     with st.form("policy_form"):
-        st.markdown('<div class="section-title">Decision variables</div>', unsafe_allow_html=True)
-        st.markdown('<div class="help-text">These two parameters define the policy evaluated by the simulation.</div>', unsafe_allow_html=True)
-        d1, d2 = st.columns(2)
-        with d1:
+        row1_col1, row1_col2 = st.columns([0.92, 2.08], gap="medium")
+
+        with row1_col1:
+            st.markdown(
+                """
+                <div class="input-card">
+                <h3>Decision variables</h3>
+                <p>Policy values chosen by the user.</p>
+                """,
+                unsafe_allow_html=True,
+            )
             S = st.number_input(
                 "S  Opportunity acceptance threshold",
                 min_value=0.0,
@@ -560,7 +658,6 @@ with tab_run:
                 format="%.4f",
                 help="Opportunities before S are ignored. Opportunities after S may be used for inspection.",
             )
-        with d2:
             T = st.number_input(
                 "T  Scheduled inspection interval",
                 min_value=0.0001,
@@ -569,112 +666,131 @@ with tab_run:
                 format="%.4f",
                 help="Scheduled inspection is performed at T if no renewal occurs before that time.",
             )
+            st.markdown("</div>", unsafe_allow_html=True)
 
-        st.divider()
+        with row1_col2:
+            st.markdown(
+                """
+                <div class="input-card">
+                <h3>Reliability parameters</h3>
+                <p>Degradation and opportunity occurrence.</p>
+                """,
+                unsafe_allow_html=True,
+            )
+            r1, r2, r3 = st.columns(3)
+            with r1:
+                mu_x = st.number_input(
+                    "μX  Mean time to defect arrival",
+                    min_value=0.0001,
+                    value=2.0,
+                    step=0.10,
+                    format="%.4f",
+                )
+            with r2:
+                mu_h = st.number_input(
+                    "μH  Mean delay time from defect to failure",
+                    min_value=0.0001,
+                    value=1.0,
+                    step=0.10,
+                    format="%.4f",
+                )
+            with r3:
+                mu_z = st.number_input(
+                    "μZ  Mean time between opportunities",
+                    min_value=0.000001,
+                    value=1.0,
+                    step=0.10,
+                    format="%.6f",
+                )
+            st.markdown("</div>", unsafe_allow_html=True)
 
-        st.markdown('<div class="section-title">System behavior</div>', unsafe_allow_html=True)
-        st.markdown('<div class="help-text">These parameters describe degradation and the occurrence of inspection opportunities.</div>', unsafe_allow_html=True)
-        r1, r2, r3 = st.columns(3)
-        with r1:
-            mu_x = st.number_input(
-                "μX  Mean time to defect arrival",
-                min_value=0.0001,
-                value=2.0,
-                step=0.10,
-                format="%.4f",
-            )
-        with r2:
-            mu_h = st.number_input(
-                "μH  Mean delay time from defect to failure",
-                min_value=0.0001,
-                value=1.0,
-                step=0.10,
-                format="%.4f",
-            )
-        with r3:
-            mu_z = st.number_input(
-                "μZ  Mean time between opportunities",
-                min_value=0.000001,
-                value=1.0,
-                step=0.10,
-                format="%.6f",
-            )
+        row2_col1, row2_col2 = st.columns([1.55, 1.45], gap="medium")
 
-        st.divider()
+        with row2_col1:
+            st.markdown(
+                """
+                <div class="input-card">
+                <h3>Cost parameters</h3>
+                <p>Economic consequences of failure, prevention and inspection.</p>
+                """,
+                unsafe_allow_html=True,
+            )
+            c1, c2, c3, c4 = st.columns(4)
+            with c1:
+                c_f = st.number_input(
+                    "CF  Corrective replacement cost",
+                    min_value=0.0,
+                    value=5.0,
+                    step=0.50,
+                    format="%.4f",
+                )
+            with c2:
+                c_p = st.number_input(
+                    "CP  Preventive replacement cost",
+                    min_value=0.0,
+                    value=1.0,
+                    step=0.10,
+                    format="%.4f",
+                )
+            with c3:
+                c_i = st.number_input(
+                    "CI  Scheduled inspection cost",
+                    min_value=0.0,
+                    value=0.5,
+                    step=0.10,
+                    format="%.4f",
+                )
+            with c4:
+                c_o = st.number_input(
+                    "CO  Opportunistic inspection cost",
+                    min_value=0.0,
+                    value=0.2,
+                    step=0.10,
+                    format="%.4f",
+                )
+            st.markdown("</div>", unsafe_allow_html=True)
 
-        st.markdown('<div class="section-title">Economic parameters</div>', unsafe_allow_html=True)
-        st.markdown('<div class="help-text">These costs define the economic consequences of inspection, prevention, and failure.</div>', unsafe_allow_html=True)
-        c1, c2, c3, c4 = st.columns(4)
-        with c1:
-            c_f = st.number_input(
-                "CF  Corrective replacement cost",
-                min_value=0.0,
-                value=5.0,
-                step=0.50,
-                format="%.4f",
+        with row2_col2:
+            st.markdown(
+                """
+                <div class="input-card">
+                <h3>Inspection quality and simulation</h3>
+                <p>False negative probabilities and Monte Carlo settings.</p>
+                """,
+                unsafe_allow_html=True,
             )
-        with c2:
-            c_p = st.number_input(
-                "CP  Preventive replacement cost",
-                min_value=0.0,
-                value=1.0,
-                step=0.10,
-                format="%.4f",
-            )
-        with c3:
-            c_i = st.number_input(
-                "CI  Scheduled inspection cost",
-                min_value=0.0,
-                value=0.5,
-                step=0.10,
-                format="%.4f",
-            )
-        with c4:
-            c_o = st.number_input(
-                "CO  Opportunistic inspection cost",
-                min_value=0.0,
-                value=0.2,
-                step=0.10,
-                format="%.4f",
-            )
-
-        st.divider()
-
-        st.markdown('<div class="section-title">Inspection quality and simulation</div>', unsafe_allow_html=True)
-        st.markdown('<div class="help-text">False negative probabilities represent missed detections. Simulation settings control the Monte Carlo run.</div>', unsafe_allow_html=True)
-        q1, q2, q3, q4 = st.columns([1.25, 1.25, 1.0, 0.8])
-        with q1:
-            beta_s = st.slider(
-                "βs  False negative probability in scheduled inspections",
-                min_value=0.0,
-                max_value=1.0,
-                value=0.0,
-                step=0.01,
-            )
-        with q2:
-            beta_o = st.slider(
-                "βo  False negative probability in opportunistic inspections",
-                min_value=0.0,
-                max_value=1.0,
-                value=0.0,
-                step=0.01,
-            )
-        with q3:
-            n_cycles = st.number_input(
-                "Number of simulated decision steps",
-                min_value=1_000,
-                max_value=2_000_000,
-                value=100_000,
-                step=10_000,
-            )
-        with q4:
-            seed = st.number_input(
-                "Random seed",
-                min_value=0,
-                max_value=999_999,
-                value=42,
-                step=1,
-            )
+            q1, q2 = st.columns(2)
+            with q1:
+                beta_s = st.slider(
+                    "βs  Scheduled inspection false negative",
+                    min_value=0.0,
+                    max_value=1.0,
+                    value=0.0,
+                    step=0.01,
+                )
+                n_cycles = st.number_input(
+                    "Number of simulated decision steps",
+                    min_value=1_000,
+                    max_value=2_000_000,
+                    value=100_000,
+                    step=10_000,
+                )
+            with q2:
+                beta_o = st.slider(
+                    "βo  Opportunistic inspection false negative",
+                    min_value=0.0,
+                    max_value=1.0,
+                    value=0.0,
+                    step=0.01,
+                )
+                seed = st.number_input(
+                    "Random seed",
+                    min_value=0,
+                    max_value=999_999,
+                    value=42,
+                    step=1,
+                )
+            st.markdown("</div>", unsafe_allow_html=True)
 
         submitted = st.form_submit_button("Run policy evaluation", type="primary", use_container_width=True)
 
@@ -749,6 +865,17 @@ with tab_policy:
         unsafe_allow_html=True,
     )
 
+    st.markdown(
+        """
+        <div class="maintenance-strip">
+            <div class="gear"></div>
+            <div class="pulse-node"></div>
+            <div class="maintenance-label">Maintenance decision loop<br><span>defect detection, inspection timing and renewal</span></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
     col_s, col_t = st.columns(2)
 
     with col_s:
@@ -802,6 +929,17 @@ with tab_policy:
 # ---------------------------------------------------------------------
 with tab_metrics:
     st.markdown("## Metrics and interpretation")
+
+    st.markdown(
+        """
+        <div class="maintenance-strip">
+            <div class="gear"></div>
+            <div class="pulse-node"></div>
+            <div class="maintenance-label">Performance monitoring<br><span>cost, failures, useful opportunities and missed detections</span></div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     col_1, col_2 = st.columns(2)
 
