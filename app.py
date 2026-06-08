@@ -39,6 +39,13 @@ html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
 }
 
+.stApp {
+    background:
+        radial-gradient(circle at 12% 8%, rgba(224, 242, 254, 0.95), transparent 30%),
+        radial-gradient(circle at 88% 10%, rgba(204, 251, 241, 0.75), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #ffffff 100%);
+}
+
 .block-container {
     padding-top: 1.2rem;
     padding-bottom: 2.5rem;
@@ -51,45 +58,46 @@ html, body, [class*="css"] {
 
 .hero {
     position: relative;
-    padding: 1.15rem 1.35rem;
-    border-radius: 22px;
+    padding: 0.95rem 1.15rem;
+    border-radius: 20px;
     background:
-        radial-gradient(circle at top left, rgba(45, 212, 191, 0.35), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.35), transparent 34%),
-        linear-gradient(135deg, #020617 0%, #0f172a 42%, #164e63 100%);
-    color: white;
-    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.20);
-    margin-bottom: 0.75rem;
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.14), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.92) 100%);
+    color: #0f172a;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 14px 38px rgba(15, 23, 42, 0.10);
+    margin-bottom: 0.65rem;
     overflow: hidden;
 }
 
 .hero h1 {
-    font-size: clamp(1.45rem, 2.6vw, 2.25rem);
-    line-height: 1.10;
-    margin-bottom: 0.35rem;
+    font-size: clamp(1.05rem, 1.85vw, 1.55rem);
+    line-height: 1.16;
+    margin-bottom: 0.28rem;
     font-weight: 800;
-    letter-spacing: -0.035em;
-    max-width: 860px;
+    letter-spacing: -0.025em;
+    max-width: 760px;
 }
 
 .hero p {
-    font-size: 0.95rem;
-    opacity: 0.90;
+    font-size: 0.84rem;
+    color: #475569;
     margin-bottom: 0;
-    max-width: 900px;
+    max-width: 780px;
 }
 
 .badge {
     display: inline-block;
-    padding: 0.22rem 0.52rem;
+    padding: 0.18rem 0.46rem;
     border-radius: 999px;
-    background: rgba(224, 242, 254, 0.14);
-    color: #e0f2fe;
-    border: 1px solid rgba(224, 242, 254, 0.24);
-    font-size: 0.72rem;
-    font-weight: 750;
-    margin-right: 0.28rem;
-    margin-bottom: 0.38rem;
+    background: rgba(14, 165, 233, 0.10);
+    color: #075985;
+    border: 1px solid rgba(14, 165, 233, 0.18);
+    font-size: 0.67rem;
+    font-weight: 800;
+    margin-right: 0.22rem;
+    margin-bottom: 0.30rem;
 }
 
 .panel {
@@ -186,11 +194,13 @@ html, body, [class*="css"] {
     height: 72px;
     border-radius: 20px;
     background:
-        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.35), transparent 32%),
-        linear-gradient(135deg, #020617, #1e3a8a, #0f766e);
+        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.22), transparent 32%),
+        radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.18), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 245, 249, 0.94));
+    border: 1px solid rgba(15, 23, 42, 0.08);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
     margin-bottom: 0.65rem;
 }
 
@@ -200,7 +210,7 @@ html, body, [class*="css"] {
     right: 9%;
     top: 36px;
     height: 4px;
-    background: rgba(226, 232, 240, 0.78);
+    background: rgba(100, 116, 139, 0.45);
     border-radius: 999px;
 }
 
@@ -240,7 +250,7 @@ html, body, [class*="css"] {
     position: absolute;
     top: 53px;
     left: 33%;
-    color: #e0f2fe;
+    color: #0284c7;
     font-weight: 800;
 }
 
@@ -248,7 +258,7 @@ html, body, [class*="css"] {
     position: absolute;
     top: 53px;
     left: 77%;
-    color: #dcfce7;
+    color: #059669;
     font-weight: 800;
 }
 
